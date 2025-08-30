@@ -1,0 +1,119 @@
+.why-choose-us-section {
+  padding: 40px 20px; 
+  text-align: left;
+  max-width: 1600px; 
+  margin: 0 auto; 
+  font-family: Arial, sans-serif; 
+}
+
+.section-title {
+  font-size: 2.5em;
+  color: #333;
+  margin-bottom: 10px;
+  
+}
+
+.section-subtitle {
+  font-size: 1em;
+  color: #666;
+  margin-bottom: 40px;
+  font-weight: bold;
+}
+
+.plans-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px; 
+  flex-wrap: wrap; 
+}
+
+.plan-card {
+  flex: 1; 
+  min-width: 280px; 
+  max-width: calc(33.333% - 20px); 
+  border-radius: 15px;
+  overflow: hidden; 
+  position: relative;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); 
+  transition: transform 0.3s ease-in-out;
+}
+
+.plan-card:hover {
+  transform: translateY(-5px);
+}
+
+.plan-image {
+  width: 100%;
+  height: 400px; 
+  object-fit: cover; 
+  display: block;
+}
+
+.plan-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0) 100%);
+  color: #fff;
+  box-sizing: border-box; /* ✅ correct property */
+  background-color: #a9a9a9bd; /* ✅ CSS doesn’t allow “ash”, use a valid color name or hex */
+  padding: 25px 20px 15px;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+  width: 90%;
+ bottom: 3%;
+ left: 4%;
+ border-radius: 45px;
+}
+
+
+.plan-title {
+  font-size: 1.6em;
+  margin-bottom: 8px;
+  font-weight: bold;
+}
+
+.plan-description {
+  font-size: 0.95em;
+  line-height: 1.4;
+  margin-bottom: 15px;
+  color: #ddd;
+}
+
+.plan-duration {
+  font-size: 0.9em;
+  font-weight: bold;
+  opacity: 0.8;
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+  .plan-card {
+    max-width: calc(50% - 15px); 
+  }
+}
+
+@media (max-width: 768px) {
+  .plans-container {
+    flex-direction: column; 
+    align-items: center;
+  }
+  .plan-card {
+    max-width: 90%; 
+    margin-bottom: 20px;
+  }
+  .section-title {
+    font-size: 2em;
+  }
+}
+
+@media (max-width: 480px) {
+  .plan-card {
+    min-width: unset; 
+    max-width: 100%;
+  }
+  .plan-image {
+    height: 300px; 
+  }
+}

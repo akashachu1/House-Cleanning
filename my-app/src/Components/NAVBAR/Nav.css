@@ -1,0 +1,109 @@
+/* Navbar Base */
+.navbar {
+  background: #ffffff;
+  box-shadow: 0px 2px 8px rgba(0,0,0,0.1);
+  position: sticky;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+.navbar-container {
+  display: flex;
+  justify-content: space-between; /* Logo left, menu right */
+  align-items: center;
+  padding: 0.8rem 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Logo */
+.navbar-logo {
+  display: flex;
+  align-items: center;
+  margin-left: -40px;
+  gap: 10px; 
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-decoration: none;
+  color: #333;
+}
+
+.logo-img {
+  width: 40px;
+  height: 40px;
+}
+
+/* Menu Links */
+.navbar-menu {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+  padding: 0;
+}
+
+.navbar-menu li a {
+  text-decoration: none;
+  font-size: 2rem;
+  color: #333;
+  transition: color 0.3s ease;
+}
+
+.navbar-menu li a:hover {
+  color: #007bff;
+}
+
+
+
+/* Mobile Menu */
+.menu-toggle {
+  display: none;
+}
+
+.menu-icon {
+  display: none;
+  font-size: 1.8rem;
+  cursor: pointer;
+  user-select: none;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .menu-icon {
+    display: block;
+    color: #333;
+  }
+
+  /* Hide menu initially */
+  .navbar-menu {
+    position: absolute;
+    top: 70px;
+    right: 0; /* ✅ keep menu aligned to right */
+    width: 100%; /* take full width under navbar */
+    background: #fff;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1rem 2rem;
+    gap: 1.2rem;
+    max-height: 0; /* hidden by default */
+    overflow: hidden;
+    box-shadow: 0px 4px 6px rgba(0,0,0,0.1);
+    transition: max-height 0.4s ease-in-out;
+  }
+
+  /* ✅ Expand whole menu when toggled */
+  .menu-toggle:checked ~ .navbar-menu {
+    max-height: 500px;
+  }
+
+  /* Make each link span full width */
+  .navbar-menu li {
+    width: 100%;
+  }
+
+  .navbar-menu li a {
+    display: block;
+    width: 100%;
+    padding: 0.5rem 0;
+  }
+}
